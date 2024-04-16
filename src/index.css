@@ -6,6 +6,10 @@
   html {
     @apply bg-primary font-sans text-white;
   }
+
+  h2 {
+    @apply text-[2.25rem] font-semibold leading-[2.75rem] tracking-tight md:text-[2.5rem] md:leading-[3.25rem] lg:text-[2.75rem] lg:leading-[3.75rem] xl:text-[3.25rem] xl:leading-[4.0625rem];
+  }
 }
 
 @layer components {
