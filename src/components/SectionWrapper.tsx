@@ -4,7 +4,7 @@ type SectionWrapperProps = {
 
 function SectionWrapper({ children }: SectionWrapperProps) {
   return (
-    <section className="flex w-full flex-col items-center justify-center overflow-hidden gap-3 lg:gap-5 mb-16 lg:mb-20">
+    <section className="mb-16 flex w-full flex-col items-center justify-center gap-3 overflow-hidden lg:mb-20 lg:gap-5">
       {children}
     </section>
   );
