@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-primary font-sans text-white;
+  }
+}
+
+@layer components {
+  .section-text {
+    @apply px-10 text-[0.875rem] leading-[1.25rem] lg:text-[1rem] lg:leading-[1.5rem];
+  }
+}
