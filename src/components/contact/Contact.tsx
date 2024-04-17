@@ -1,10 +1,30 @@
+import { useRef } from "react";
+
 import { contactContent } from "../../constants/contact";
+import { useEmail } from "../../hooks/useEmail";
 
 type ContactProps = {
   contactRef: React.MutableRefObject<HTMLElement | null>;
 };
 
 function Contact({ contactRef }: ContactProps) {
+  const formRef = useRef<HTMLFormElement | null>(null);
+
+  const { isSignedUp, isLoading, sendEmail } = useEmail({
+    serviceId: import.meta.env.VITE_SERVICE_ID,
+    templateId: import.meta.env.VITE_TEMPLATE_ID,
+    publicKey: import.meta.env.VITE_PUBLIC_KEY,
+  });
+
+  function handleContactFormSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    if (!formRef.current) return;
+    if (isSignedUp || isLoading) return;
+
+    sendEmail(formRef.current);
+  }
+
   return (
     <section
       ref={contactRef}
@@ -25,7 +45,11 @@ function Contact({ contactRef }: ContactProps) {
           <span className="block">{contactContent.intro2}</span>
         </p>
 
-        <form className="flex flex-col gap-5">
+        <form
+          ref={formRef}
+          className="flex flex-col gap-5"
+          onSubmit={handleContactFormSubmit}
+        >
           {contactContent.inputs.map((input) => (
             <input
               key={input.name}
@@ -52,10 +76,14 @@ function Contact({ contactRef }: ContactProps) {
 
           <button
             type="submit"
-            disabled={false}
+            disabled={isSignedUp || isLoading}
             className="w-full rounded-lg bg-[#327fff]/85 p-6 text-base capitalize text-white transition-colors hover:bg-[#327fff] focus-visible:bg-[#327fff] focus-visible:outline-none disabled:pointer-events-none disabled:bg-[#327fff]/70"
           >
-            {contactContent.button.default}
+            {isSignedUp
+              ? contactContent.button.signedUp
+              : isLoading
+                ? contactContent.button.loading
+                : contactContent.button.default}
           </button>
         </form>
       </div>
