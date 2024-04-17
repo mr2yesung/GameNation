@@ -8,6 +8,7 @@ import Values from "./components/values/Values";
 import Contact from "./components/contact/Contact";
 import FollowUs from "./components/follow us/FollowUs";
 import Footer from "./components/footer/Footer";
+import Logo from "./components/Logo";
 
 function App() {
   const gamesRef = useRef<HTMLElement | null>(null);
@@ -30,6 +31,10 @@ function App() {
       <Team teamRef={teamRef} />
       <Values valuesRef={valuesRef} />
       <Contact contactRef={contactRef} />
+
+      <div className="mb-6 flex w-full items-center justify-center overflow-hidden">
+        <Logo width={341} height={66} />
+      </div>
 
       <FollowUs />
       <Footer />
