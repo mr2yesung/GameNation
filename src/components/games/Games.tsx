@@ -16,7 +16,7 @@ function Games() {
         alt={gamesContent.imgText}
       />
 
-      <ButtonWhite style="text-base lg:text-lg">
+      <ButtonWhite style="text-base capitalize lg:text-lg">
         {gamesContent.button}
       </ButtonWhite>
     </SectionWrapper>

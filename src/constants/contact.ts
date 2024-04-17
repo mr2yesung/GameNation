@@ -9,8 +9,6 @@ const contactContent = {
     { type: "text", name: "last_name", display: "Last Name" },
     { type: "email", name: "user_email", display: "Email" },
   ],
-  inputStyle:
-    "w-full rounded-lg border-2 border-white/40 bg-white/5 p-6 text-base text-white transition-colors placeholder:text-white/90 focus-visible:border-white/60 focus-visible:outline-none",
   checkbox:
     "I agree to receive promotional offers relating to all GameNation games and services.",
   button: {

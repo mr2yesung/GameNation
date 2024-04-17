@@ -15,7 +15,7 @@ function Values() {
             className={`flex max-w-[300px] flex-col gap-y-4 border-l-4 pl-5 ${value.borderStyle}`}
           >
             <h3
-              className={`text-start text-3xl font-semibold ${value.textStyle}`}
+              className={`text-start text-3xl font-semibold capitalize ${value.textStyle}`}
             >
               {value.title}
             </h3>

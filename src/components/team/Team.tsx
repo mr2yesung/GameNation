@@ -16,10 +16,10 @@ function Team() {
               src={member.image}
               alt={member.name}
             />
-            <p className="text-center text-base font-semibold text-white/90">
+            <p className="text-center text-base font-semibold capitalize text-white/90">
               {member.name}
             </p>
-            <p className="text-center text-base text-white/70">
+            <p className="text-center text-base capitalize text-white/70">
               {member.position}
             </p>
           </li>

@@ -26,7 +26,7 @@ function Contact() {
               placeholder={input.display}
               name={input.name}
               aria-label={input.display}
-              className={contactContent.inputStyle}
+              className="w-full rounded-lg border-2 border-white/40 bg-white/5 p-6 text-base text-white transition-colors placeholder:capitalize placeholder:text-white/90 focus-visible:border-white/60 focus-visible:outline-none"
               required
             />
           ))}
@@ -46,7 +46,7 @@ function Contact() {
           <button
             type="submit"
             disabled={false}
-            className="w-full rounded-lg bg-[#327fff]/85 p-6 text-base text-white transition-colors hover:bg-[#327fff] focus-visible:bg-[#327fff] focus-visible:outline-none disabled:pointer-events-none disabled:bg-[#327fff]/70"
+            className="w-full rounded-lg bg-[#327fff]/85 p-6 text-base capitalize text-white transition-colors hover:bg-[#327fff] focus-visible:bg-[#327fff] focus-visible:outline-none disabled:pointer-events-none disabled:bg-[#327fff]/70"
           >
             {contactContent.button.default}
           </button>
