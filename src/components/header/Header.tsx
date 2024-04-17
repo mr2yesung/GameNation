@@ -3,13 +3,34 @@ import { useState } from "react";
 import Logo from "../Logo";
 import ButtonWhite from "../ButtonWhite";
 
-const navButtons = ["Games", "Team", "Values", "Contact Us"];
+type HeaderProps = {
+  gamesRef: React.MutableRefObject<HTMLElement | null>;
+  teamRef: React.MutableRefObject<HTMLElement | null>;
+  valuesRef: React.MutableRefObject<HTMLElement | null>;
+  contactRef: React.MutableRefObject<HTMLElement | null>;
+};
 
-function Header() {
+function Header({ gamesRef, teamRef, valuesRef, contactRef }: HeaderProps) {
   const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
+
+  const navButtons = [
+    { name: "Games", ref: gamesRef },
+    { name: "Team", ref: teamRef },
+    { name: "Values", ref: valuesRef },
+    { name: "Contact Us", ref: contactRef },
+  ];
 
   function handleToggleNavOpen() {
     setIsNavOpen((isNavOpen) => !isNavOpen);
+  }
+
+  function handleNavButtonClick(
+    ref: React.MutableRefObject<HTMLElement | null>,
+  ) {
+    if (!ref.current) return;
+
+    setIsNavOpen(false);
+    ref.current.scrollIntoView({ behavior: "smooth" });
   }
 
   return (
@@ -19,18 +40,24 @@ function Header() {
         <nav
           className={`fixed left-0 top-0 z-20 h-screen w-screen flex-col justify-center gap-x-5 gap-y-10 bg-primary/90 lg:static lg:flex lg:h-auto lg:w-auto lg:flex-row lg:bg-transparent ${isNavOpen ? "flex" : "hidden"}`}
         >
-          {navButtons.map((navButton) => (
+          {navButtons.map(({ name, ref }) => (
             <button
-              key={`nav-${navButton}`}
-              className="text-xl tracking-wide text-white/70 transition-colors hover:text-white/90 focus-visible:text-white/90 focus-visible:outline-none lg:text-base"
+              key={`nav-${name}`}
+              className="text-xl capitalize tracking-wide text-white/70 transition-colors hover:text-white/90 focus-visible:text-white/90 focus-visible:outline-none lg:text-base"
+              onClick={() => handleNavButtonClick(ref)}
             >
-              {navButton}
+              {name}
             </button>
           ))}
         </nav>
       </div>
 
-      <ButtonWhite style="hidden lg:block">Contact Us</ButtonWhite>
+      <ButtonWhite
+        style="hidden lg:block"
+        handleClick={() => handleNavButtonClick(contactRef)}
+      >
+        Contact Us
+      </ButtonWhite>
 
       <button
         className="z-50 fill-white/70 transition-colors hover:fill-white/90 focus-visible:fill-white/90 focus-visible:outline-none lg:hidden"

@@ -3,9 +3,13 @@ import ButtonWhite from "../ButtonWhite";
 
 import { gamesContent } from "../../constants/games";
 
-function Games() {
+type GamesProps = {
+  gamesRef: React.MutableRefObject<HTMLElement | null>;
+};
+
+function Games({ gamesRef }: GamesProps) {
   return (
-    <SectionWrapper>
+    <SectionWrapper sectionRef={gamesRef}>
       <h2 className="px-6 text-center">{gamesContent.title}</h2>
       <p className="section-text px-10 text-center">{gamesContent.intro}</p>
 

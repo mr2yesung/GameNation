@@ -1,8 +1,15 @@
 import { contactContent } from "../../constants/contact";
 
-function Contact() {
+type ContactProps = {
+  contactRef: React.MutableRefObject<HTMLElement | null>;
+};
+
+function Contact({ contactRef }: ContactProps) {
   return (
-    <section className="mb-10 flex w-full items-end justify-center gap-x-10">
+    <section
+      ref={contactRef}
+      className="mb-10 flex w-full items-end justify-center gap-x-10"
+    >
       <img
         className="hidden xl:block"
         src={contactContent.image}

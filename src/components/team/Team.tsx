@@ -2,9 +2,13 @@ import SectionWrapper from "../SectionWrapper";
 
 import { teamContent } from "../../constants/team";
 
-function Team() {
+type TeamProps = {
+  teamRef: React.MutableRefObject<HTMLElement | null>;
+};
+
+function Team({ teamRef }: TeamProps) {
   return (
-    <SectionWrapper>
+    <SectionWrapper sectionRef={teamRef}>
       <h2 className="px-6 text-center">{teamContent.title}</h2>
       <p className="section-text px-10 text-center">{teamContent.intro}</p>
 

@@ -2,9 +2,13 @@ import SectionWrapper from "../SectionWrapper";
 
 import { valuesContent } from "../../constants/values";
 
-function Values() {
+type ValuesProps = {
+  valuesRef: React.MutableRefObject<HTMLElement | null>;
+};
+
+function Values({ valuesRef }: ValuesProps) {
   return (
-    <SectionWrapper>
+    <SectionWrapper sectionRef={valuesRef}>
       <h2 className="px-6 text-center">{valuesContent.title}</h2>
       <p className="section-text px-10 text-center">{valuesContent.intro}</p>
 
