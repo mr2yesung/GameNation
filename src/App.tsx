@@ -3,6 +3,7 @@ import Games from "./components/games/Games";
 import Team from "./components/team/Team";
 import Values from "./components/values/Values";
 import Contact from "./components/contact/Contact";
+import FollowUs from "./components/follow us/FollowUs";
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
       <Team />
       <Values />
       <Contact />
+
+      <FollowUs />
     </div>
   );
 }
