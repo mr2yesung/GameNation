@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import emailjs from "@emailjs/browser";
+import { capitalizeInputValue } from "../utilities/capitalizeInputValue";
 
 type useEmailProps = {
   serviceId: string;
@@ -26,6 +27,16 @@ function useEmail({
     setIsLoading(true);
 
     try {
+      const inputFirstName = form.elements.namedItem(
+        "first_name",
+      ) as HTMLInputElement;
+      const inputLastName = form.elements.namedItem(
+        "last_name",
+      ) as HTMLInputElement;
+
+      if (inputFirstName) capitalizeInputValue(inputFirstName);
+      if (inputLastName) capitalizeInputValue(inputLastName);
+
       await emailjs.sendForm(serviceId, templateId, form, publicKey);
 
       setIsSignedUp(true);
