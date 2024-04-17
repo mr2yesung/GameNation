@@ -2,6 +2,7 @@ import Hero from "./components/hero/Hero";
 import Games from "./components/games/Games";
 import Team from "./components/team/Team";
 import Values from "./components/values/Values";
+import Contact from "./components/contact/Contact";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Games />
       <Team />
       <Values />
+      <Contact />
     </div>
   );
 }
