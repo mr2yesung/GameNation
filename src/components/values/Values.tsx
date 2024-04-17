@@ -6,7 +6,7 @@ function Values() {
   return (
     <SectionWrapper>
       <h2 className="px-6 text-center">{valuesContent.title}</h2>
-      <p className="section-text text-center">{valuesContent.intro}</p>
+      <p className="section-text px-10 text-center">{valuesContent.intro}</p>
 
       <ul className="grid grid-cols-1 items-center justify-center gap-y-8 px-10 pt-10 md:grid-cols-2 md:gap-x-10 lg:gap-x-16 lg:gap-y-12 lg:px-6 lg:pt-14 xl:grid-cols-4">
         {valuesContent.values.map((value) => (

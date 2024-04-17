@@ -13,7 +13,7 @@ function Hero() {
         <h1 className="px-4 text-center text-[2.5rem] font-semibold leading-[3.25rem] tracking-tight md:text-[2.75rem] md:leading-[3.75rem] lg:text-[3.25rem] lg:leading-[4.0625rem] xl:text-[3.75rem] xl:leading-[4.5rem]">
           {heroContent.title}
         </h1>
-        <p className="section-text text-center capitalize">
+        <p className="section-text px-10 text-center capitalize">
           {heroContent.intro}
         </p>
         <ul className="flex justify-center gap-8">

@@ -7,7 +7,7 @@ function Games() {
   return (
     <SectionWrapper>
       <h2 className="px-6 text-center">{gamesContent.title}</h2>
-      <p className="section-text text-center">{gamesContent.intro}</p>
+      <p className="section-text px-10 text-center">{gamesContent.intro}</p>
 
       <img
         className="my-2 max-w-[80%] overflow-hidden rounded-lg lg:rounded-xl"

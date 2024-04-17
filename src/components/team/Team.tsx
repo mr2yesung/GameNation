@@ -6,7 +6,7 @@ function Team() {
   return (
     <SectionWrapper>
       <h2 className="px-6 text-center">{teamContent.title}</h2>
-      <p className="section-text text-center">{teamContent.intro}</p>
+      <p className="section-text px-10 text-center">{teamContent.intro}</p>
 
       <ul className="my-6 grid grid-cols-2 gap-8 md:gap-x-24 lg:my-10 lg:grid-cols-4 lg:gap-x-16">
         {teamContent.members.map((member) => (
