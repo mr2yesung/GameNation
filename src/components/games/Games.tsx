@@ -18,6 +18,7 @@ function Games({ gamesRef }: GamesProps) {
         src="/images/game-2x.png"
         srcSet="/images/game-1x.png 1180w, /images/game-2x.png 2360w"
         alt={gamesContent.imgText}
+        loading="lazy"
       />
 
       <ButtonWhite style="text-base capitalize lg:text-lg">

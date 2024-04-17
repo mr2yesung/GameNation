@@ -34,6 +34,7 @@ function Contact({ contactRef }: ContactProps) {
         className="hidden xl:block"
         src={contactContent.image}
         alt={contactContent.imageText}
+        loading="lazy"
       />
 
       <div className="max-w-[360px] space-y-5 pb-5 md:max-w-[455px] lg:pb-8">

@@ -19,6 +19,7 @@ function Team({ teamRef }: TeamProps) {
               className="mb-3 h-[150px] w-[150px] grayscale"
               src={member.image}
               alt={member.name}
+              loading="lazy"
             />
             <p className="text-center text-base font-semibold capitalize text-white/90">
               {member.name}
