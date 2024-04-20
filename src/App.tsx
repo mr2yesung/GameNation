@@ -9,7 +9,6 @@ import Contact from "./components/contact/Contact";
 import FollowUs from "./components/follow us/FollowUs";
 import Footer from "./components/footer/Footer";
 import Logo from "./components/Logo";
-import ScrollAnimator from "./components/ScrollAnimator";
 
 function App() {
   const gamesRef = useRef<HTMLElement | null>(null);
@@ -28,18 +27,10 @@ function App() {
 
       <Hero />
 
-      <ScrollAnimator>
-        <Games gamesRef={gamesRef} />
-      </ScrollAnimator>
-      <ScrollAnimator>
-        <Team teamRef={teamRef} />
-      </ScrollAnimator>
-      <ScrollAnimator>
-        <Values valuesRef={valuesRef} />
-      </ScrollAnimator>
-      <ScrollAnimator>
-        <Contact contactRef={contactRef} />
-      </ScrollAnimator>
+      <Games gamesRef={gamesRef} />
+      <Team teamRef={teamRef} />
+      <Values valuesRef={valuesRef} />
+      <Contact contactRef={contactRef} />
 
       <div className="mb-6 flex w-full items-center justify-center overflow-hidden">
         <Logo width={341} height={66} />

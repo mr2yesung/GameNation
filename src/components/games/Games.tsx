@@ -1,3 +1,4 @@
+import ScrollAnimator from "../ScrollAnimator";
 import SectionWrapper from "../SectionWrapper";
 import ButtonWhite from "../ButtonWhite";
 
@@ -9,22 +10,24 @@ type GamesProps = {
 
 function Games({ gamesRef }: GamesProps) {
   return (
-    <SectionWrapper sectionRef={gamesRef}>
-      <h2 className="px-6 text-center">{gamesContent.title}</h2>
-      <p className="section-text px-10 text-center">{gamesContent.intro}</p>
+    <ScrollAnimator>
+      <SectionWrapper sectionRef={gamesRef}>
+        <h2 className="px-6 text-center">{gamesContent.title}</h2>
+        <p className="section-text px-10 text-center">{gamesContent.intro}</p>
 
-      <img
-        className="my-2 max-w-[80%] overflow-hidden rounded-lg lg:rounded-xl"
-        src="/images/game-2x.png"
-        srcSet="/images/game-1x.png 1180w, /images/game-2x.png 2360w"
-        alt={gamesContent.imgText}
-        loading="lazy"
-      />
+        <img
+          className="my-2 max-w-[80%] overflow-hidden rounded-lg lg:rounded-xl"
+          src="/images/game-2x.png"
+          srcSet="/images/game-1x.png 1180w, /images/game-2x.png 2360w"
+          alt={gamesContent.imgText}
+          loading="lazy"
+        />
 
-      <ButtonWhite style="text-base capitalize lg:text-lg">
-        {gamesContent.button}
-      </ButtonWhite>
-    </SectionWrapper>
+        <ButtonWhite style="text-base capitalize lg:text-lg">
+          {gamesContent.button}
+        </ButtonWhite>
+      </SectionWrapper>
+    </ScrollAnimator>
   );
 }
 
