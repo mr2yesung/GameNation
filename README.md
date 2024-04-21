@@ -1,6 +1,6 @@
 # GameNation
 
-This project is a landing page for the game studio GameNation. It includes several features such as smooth scrolling to different page sections and a contact form that allows users to send emails directly from the site. The project incorporates a modern UI/UX design for an engaging and user-friendly experience.
+This project is a landing page for the game studio GameNation. It includes several features such as smooth scrolling to different page sections with scroll animations on each section, loading low-resolution image initially to enhance user experience, and a contact form that allows users to send emails directly from the site. The project incorporates a modern UI/UX design for an engaging and user-friendly experience.
 
 This project is deployed on [vercel](https://game-nation.vercel.app/).
 
