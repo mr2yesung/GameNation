@@ -2,11 +2,21 @@ import ButtonWhite from "../ButtonWhite";
 
 import { heroContent } from "../../constants/hero";
 
+const backgroundImgStyle =
+  "pointer-events-none absolute h-full w-full bg-cover bg-[right_30%_top_50%] bg-no-repeat sm:bg-[right_40%_top_50%] md:bg-[right_30%_top_50%] lg:bg-center";
+
 function Hero() {
   return (
     <main className="relative flex max-h-screen w-full flex-col items-center justify-center gap-16 overflow-hidden bg-gradient-to-b from-primary/0 via-primary/40 to-primary py-96 lg:gap-20">
+      {/* Hero Background Blur */}
+      <div
+        className={`-z-20 bg-[url('/images/hero-blur.png')] ${backgroundImgStyle}`}
+      ></div>
+
       {/* Hero Background */}
-      <div className="pointer-events-none absolute -z-10 h-full w-full bg-[url('/images/hero-1x.png')] bg-cover bg-[right_30%_top_50%] bg-no-repeat sm:bg-[right_40%_top_50%] md:bg-[url('/images/hero-2x.png')] md:bg-[right_30%_top_50%] lg:bg-center"></div>
+      <div
+        className={`-z-10 bg-[url('/images/hero-1x.png')] md:bg-[url('/images/hero-2x.png')] ${backgroundImgStyle}`}
+      ></div>
 
       {/* Hero Content */}
       <div className="flex flex-col items-center justify-center gap-5 lg:gap-8">
